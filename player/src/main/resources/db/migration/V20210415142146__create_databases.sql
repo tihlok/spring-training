@@ -1,0 +1,10 @@
+CREATE TABLE PLAYER
+(
+    id         SERIAL  NOT NULL,
+    name       VARCHAR NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+);
+CREATE UNIQUE INDEX player_id_index ON PLAYER (id);
+ALTER TABLE PLAYER
+    ADD CONSTRAINT player_pk PRIMARY KEY (id);

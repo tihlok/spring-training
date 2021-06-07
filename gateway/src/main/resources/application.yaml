@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: spring-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: players
+          uri: http://localhost:9002/
+          predicates:
+            - Path=/players/**
+
+logging:
+  level:
+    root: WARN
+    games:
+      pixelfox: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+

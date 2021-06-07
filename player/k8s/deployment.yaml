@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: spring-player
+  name: spring-player
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: spring-player
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: spring-player
+    spec:
+      containers:
+        - image: tihlok/spring-player:latest
+          name: spring-player
+          ports:
+            - containerPort: 9002

@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  spring-discovery:
+    container_name: spring-discovery
+    hostname: discovery
+    build: ./discovery
+  spring-gateway:
+    container_name: spring-gateway
+    hostname: gateway
+    build: ./gateway
+  spring-player:
+    container_name: spring-player
+    hostname: player
+    build: ./player
